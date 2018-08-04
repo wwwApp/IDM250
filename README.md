@@ -1,3 +1,3 @@
 # IDM250 Final Project
 
-I will be creating WordPress theme for my portfolio website.
+This is a custom WordPress template for my personal portfolio website.
