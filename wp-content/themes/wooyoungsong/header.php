@@ -16,15 +16,6 @@
     <!-- Introduction and Navigation -->
     <header class="header">
             <a class="logo" href="<?php echo home_url(); ?>">woosong</a>
-
-            <?php 
-                wp_nav_menu([
-                    'theme_location'  => 'main',
-                    'container'       => 'div',
-                    'menu_class'      => 'menu',
-                ]);
-            ?>
-
             
             <div class="menu">
                 <a class="menu__link">

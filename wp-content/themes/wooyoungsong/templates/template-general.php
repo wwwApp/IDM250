@@ -1,4 +1,9 @@
 <?php
+
+/*
+Template Name: General
+*/
+
 get_header(); ?>
 
 <main class="main">
@@ -143,7 +148,7 @@ get_header(); ?>
                     Image &amp; Caption
                 </h2>
                 <figure class="general__image">
-                    <img src="imgs/transparency.png" alt="Transparency Image">
+                    <img src="<?php echo get_template_directory_uri();?>/dist/imgs/transparency.png" alt="Transparency Image">
                     <figcaption>Screenshot of Transparency Project</figcaption>
                 </figure>
             </div>
