@@ -27,11 +27,12 @@ get_header(); ?>
                 <?php the_content(); 
                 endwhile; else: ?>
                 <p>Sorry, no posts matched your criteria.</p>
-            </div>
 
-            <div class="work-detail__image">
+                <!-- 
+                <div class="work-detail__image">
+                </div>
+                -->
             </div>
-
         <?php endif; ?>
     </div>
 </main>

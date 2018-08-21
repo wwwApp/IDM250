@@ -66,5 +66,5 @@ add_action('widgets_init', 'register_widgets');
  */
 
 add_filter('default_page_template_title', function() {
-    return __('Home');
+    return __('Default');
 });

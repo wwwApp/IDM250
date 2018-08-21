@@ -11,7 +11,7 @@
  */
 get_header(); ?>
 
-<main class="main">
+<?php /*<main class="main">
         <!-- Greeting -->
         <div class="loop">
             <div class="loop__bracket-left">[</div>
@@ -26,6 +26,6 @@ get_header(); ?>
             <div class="loop__bracket-right">]</div>
         </div>
 
-</main>
+</main>*/ ?>
 
 <?php get_footer(); ?>

@@ -45,15 +45,29 @@ ol {
   margin: 0;
 }
 
-.italic {
-  font-style: italic;
+/* general table style - including calendar widget */
+table {
+  border-collapse: collapse;
+  border: 1px solid $mainBlue;
+  text-align: center;
+  width: 100%;
 }
 
+th {
+  border: 1px solid $mainBlue;
+  padding: 0.5rem;
+  background: $hoverBlue;
+}
+
+td {
+  border: 1px solid $mainBlue;
+  padding: 0.5rem;
+}
 
 /* Header */
 .header {
-    padding: 2rem;
-  }
+  padding: 2rem;
+}
 
 .logo {
   font-weight: bold;
@@ -218,7 +232,7 @@ ol {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    }
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -365,16 +379,6 @@ ol {
         }
       }
     }
-    /*
-        &__link-search{
-            &:before {
-                content: url(../imgs/musica-searcher.svg);
-                display: inline-block;
-                width: 20px;
-                padding: 0 0.75rem;
-            }
-        }
-        */
   }
 }
 
@@ -455,6 +459,7 @@ input.search-bar[type="text"] {
 
     & > img {
       width: 100%;
+      height: auto;
     }
   }
 }
@@ -510,70 +515,51 @@ input.search-bar[type="text"] {
     margin-top: 5rem;
     width: 17rem;
 
-    &__widget {
-      margin-bottom: 4rem;
+    & > li {
+      list-style: none;
+      margin-bottom: 3rem;
+    }
 
-      &__title {
-        font-weight: bold;
-        font-size: 1.25rem;
-        margin: 0;
-        margin-bottom: 1rem;
+    h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    input {
+      &::placeholder {
+        color: $mainBlue;
       }
 
-      /* Email Subscription */
-      &__email {
-        &__submit[type="submit"] {
-          height: 35px;
-          width: 60px;
-          background: $mainBlue;
-          color: $mainPink;
-          border-radius: 5px;
-          border: none;
-        }
-
-        &__input {
-          &::placeholder {
-            color: $mainBlue;
-          }
-
-          &:focus {
-            outline-width: 0;
-          }
-
-          &[type="text"] {
-            width: 200px;
-            height: 30px;
-            color: $mainBlue;
-            background: transparent;
-            border: 0;
-            border-bottom: 2px solid $mainBlue;
-          }
-        }
+      &:focus {
+        outline-width: 0;
       }
 
-      &__link {
-        display: block;
-        margin-bottom: 0.5rem;
+      &[type="text"] {
+        width: 200px;
+        height: 30px;
+        color: $mainBlue;
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid $mainBlue;
       }
 
-      /*
-      &__recent {
-        &:hover {
-          &:before {
-            content: "[";
-            font-size: 1rem;
-          }
-
-          &:after {
-            content: "]";
-            font-size: 1rem;
-          }
-        }
+      &[type="submit"] {
+        height: 35px;
+        width: 60px;
+        background: $mainBlue;
+        color: $mainPink;
+        border-radius: 5px;
+        border: none;
       }
-      */
+    }
 
-      &__tag {
-        display: inline-block;
+    a {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .cat-item {
+      display: inline-block;
+      & > a {
         text-align: center;
         border-radius: 7px;
         background-color: $mainBlue;
@@ -621,7 +607,7 @@ input.search-bar[type="text"] {
   margin-bottom: 3rem;
 
   /* UL */
-  &__ul {
+  ul {
     & > li:before {
       content: "•";
       display: inline-block;
@@ -630,7 +616,7 @@ input.search-bar[type="text"] {
     }
   }
 
-  &__ol {
+  ol {
     margin-left: 1rem;
 
     & > li {
@@ -638,36 +624,29 @@ input.search-bar[type="text"] {
     }
   }
 
-  &__table {
-    border-collapse: collapse;
-    border: 1px solid $mainBlue;
-    text-align: center;
-    width: 100%;
+  img {
+    display: block;
+    max-width: 100%;
   }
 
-  &__image {
-    & > img {
-      max-width: 100%;
-    }
-
-    & > figcaption {
-      font-size: 0.75rem;
-    }
-  }
-
-  &__link {
-    text-align: right;
+  figcaption {
     font-size: 0.75rem;
   }
 
-  &__bq {
+  a {
+    text-align: right;
+    font-size: 0.75rem;
+    text-decoration: underline;
+  }
+
+  blockquote {
     margin: 0 1rem;
     font-size: 1rem;
     border-left: 3px solid $mainBlue;
     padding-left: 1rem;
   }
 
-  &__button {
+  button {
     cursor: pointer;
     background-color: $mainBlue;
     color: $mainPink;
@@ -680,34 +659,23 @@ input.search-bar[type="text"] {
       color: $mainBlue;
     }
   }
-}
 
-th {
-  border: 1px solid $mainBlue;
-  padding: 0.5rem;
-  background: $hoverBlue;
-}
-
-td {
-  border: 1px solid $mainBlue;
-  padding: 0.5rem;
-}
-
-.embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-}
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .embed-container iframe,
+  .embed-container object,
+  .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -715,13 +683,11 @@ td {
     margin-left: 5rem;
     margin-right: 5rem;
 
-    &__image {
-      & > figcaption {
-        font-size: 1rem;
-      }
+    figcaption {
+      font-size: 1rem;
     }
 
-    &__link {
+    a {
       font-size: 1rem;
     }
   }
@@ -732,7 +698,7 @@ td {
     margin-left: 11rem;
     margin-right: 11rem;
 
-    &__bq {
+    blockquote {
       margin: 0 3rem;
     }
   }

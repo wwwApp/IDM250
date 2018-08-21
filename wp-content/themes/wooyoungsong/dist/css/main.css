@@ -36,8 +36,21 @@ ol {
   padding: 0;
   margin: 0; }
 
-.italic {
-  font-style: italic; }
+/* general table style - including calendar widget */
+table {
+  border-collapse: collapse;
+  border: 1px solid #31549e;
+  text-align: center;
+  width: 100%; }
+
+th {
+  border: 1px solid #31549e;
+  padding: 0.5rem;
+  background: #a6c8d1; }
+
+td {
+  border: 1px solid #31549e;
+  padding: 0.5rem; }
 
 /* Header */
 .header {
@@ -245,17 +258,7 @@ ol {
   .work__item:nth-of-type(1) {
     margin-top: 0.5rem; }
   .work__item {
-    margin-bottom: 1rem;
-    /*
-        &__link-search{
-            &:before {
-                content: url(../imgs/musica-searcher.svg);
-                display: inline-block;
-                width: 20px;
-                padding: 0 0.75rem;
-            }
-        }
-        */ }
+    margin-bottom: 1rem; }
     .work__item__link {
       display: inline-block; }
       .work__item__link:before {
@@ -335,7 +338,8 @@ input.search-bar[type="text"] {
   align-items: center;
   justify-content: center; }
   .work-detail__image > img {
-    width: 100%; }
+    width: 100%;
+    height: auto; }
 
 @media screen and (min-width: 768px) {
   .work-detail__desc {
@@ -368,52 +372,35 @@ input.search-bar[type="text"] {
     display: inline-block;
     margin-top: 5rem;
     width: 17rem; }
-    .sidebar__widget {
-      margin-bottom: 4rem;
-      /* Email Subscription */
-      /*
-      &__recent {
-        &:hover {
-          &:before {
-            content: "[";
-            font-size: 1rem;
-          }
-
-          &:after {
-            content: "]";
-            font-size: 1rem;
-          }
-        }
-      }
-      */ }
-      .sidebar__widget__title {
-        font-weight: bold;
-        font-size: 1.25rem;
-        margin: 0;
-        margin-bottom: 1rem; }
-      .sidebar__widget__email__submit[type="submit"] {
-        height: 35px;
-        width: 60px;
-        background: #31549e;
-        color: #ecd2c9;
-        border-radius: 5px;
-        border: none; }
-      .sidebar__widget__email__input::placeholder {
-        color: #31549e; }
-      .sidebar__widget__email__input:focus {
-        outline-width: 0; }
-      .sidebar__widget__email__input[type="text"] {
-        width: 200px;
-        height: 30px;
-        color: #31549e;
-        background: transparent;
-        border: 0;
-        border-bottom: 2px solid #31549e; }
-      .sidebar__widget__link {
-        display: block;
-        margin-bottom: 0.5rem; }
-      .sidebar__widget__tag {
-        display: inline-block;
+    .sidebar > li {
+      list-style: none;
+      margin-bottom: 3rem; }
+    .sidebar h2 {
+      margin-bottom: 0.75rem; }
+    .sidebar input::placeholder {
+      color: #31549e; }
+    .sidebar input:focus {
+      outline-width: 0; }
+    .sidebar input[type="text"] {
+      width: 200px;
+      height: 30px;
+      color: #31549e;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid #31549e; }
+    .sidebar input[type="submit"] {
+      height: 35px;
+      width: 60px;
+      background: #31549e;
+      color: #ecd2c9;
+      border-radius: 5px;
+      border: none; }
+    .sidebar a {
+      display: block;
+      margin-bottom: 0.5rem; }
+    .sidebar .cat-item {
+      display: inline-block; }
+      .sidebar .cat-item > a {
         text-align: center;
         border-radius: 7px;
         background-color: #31549e;
@@ -421,7 +408,7 @@ input.search-bar[type="text"] {
         min-width: 3rem;
         padding: 0.5rem;
         margin-right: 0.5rem; }
-        .sidebar__widget__tag:hover {
+        .sidebar .cat-item > a:hover {
           background-color: #a6c8d1;
           color: #31549e; }
 
@@ -444,81 +431,67 @@ input.search-bar[type="text"] {
 .general {
   margin-bottom: 3rem;
   /* UL */ }
-  .general__ul > li:before {
+  .general ul > li:before {
     content: "•";
     display: inline-block;
     color: #31549e;
     padding-right: 1rem; }
-  .general__ol {
+  .general ol {
     margin-left: 1rem; }
-    .general__ol > li {
+    .general ol > li {
       padding-left: 0.5rem; }
-  .general__table {
-    border-collapse: collapse;
-    border: 1px solid #31549e;
-    text-align: center;
-    width: 100%; }
-  .general__image > img {
+  .general img {
+    display: block;
     max-width: 100%; }
-  .general__image > figcaption {
+  .general figcaption {
     font-size: 0.75rem; }
-  .general__link {
+  .general a {
     text-align: right;
-    font-size: 0.75rem; }
-  .general__bq {
+    font-size: 0.75rem;
+    text-decoration: underline; }
+  .general blockquote {
     margin: 0 1rem;
     font-size: 1rem;
     border-left: 3px solid #31549e;
     padding-left: 1rem; }
-  .general__button {
+  .general button {
     cursor: pointer;
     background-color: #31549e;
     color: #ecd2c9;
     padding: 1rem 3rem;
     border-radius: 5px;
     border: none; }
-    .general__button:hover {
+    .general button:hover {
       background-color: #a6c8d1;
       color: #31549e; }
-
-th {
-  border: 1px solid #31549e;
-  padding: 0.5rem;
-  background: #a6c8d1; }
-
-td {
-  border: 1px solid #31549e;
-  padding: 0.5rem; }
-
-.embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%; }
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
+  .general .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%; }
+  .general .embed-container iframe,
+  .general .embed-container object,
+  .general .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 @media screen and (min-width: 768px) {
   .general {
     margin-left: 5rem;
     margin-right: 5rem; }
-    .general__image > figcaption {
+    .general figcaption {
       font-size: 1rem; }
-    .general__link {
+    .general a {
       font-size: 1rem; } }
 @media screen and (min-width: 1280px) {
   .general {
     margin-left: 11rem;
     margin-right: 11rem; }
-    .general__bq {
+    .general blockquote {
       margin: 0 3rem; } }
 
 /*# sourceMappingURL=main.css.map */
