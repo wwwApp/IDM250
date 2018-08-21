@@ -442,7 +442,8 @@ input.search-bar[type="text"] {
       padding-left: 0.5rem; }
   .general img {
     display: block;
-    max-width: 100%; }
+    max-width: 100%;
+    height: auto; }
   .general figcaption {
     font-size: 0.75rem; }
   .general a {
