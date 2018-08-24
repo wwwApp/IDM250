@@ -57,9 +57,7 @@
         <div class="search-cart-block"> 
           <!--search form-->
           
-          <form method="get" action="/search.html" id="search">
-            <input name="q" type="text" size="40" placeholder="Search..." />
-          </form>
+          <?php get_search_form(); ?>
           <!--/search form-->
           
         </div>

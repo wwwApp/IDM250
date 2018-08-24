@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Archive
+Template Name: Post Listing
 */
 
 $arg = [
