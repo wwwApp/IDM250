@@ -339,7 +339,7 @@ td {
 
 /* * * * * * * * * * * * * * * * * * * *
 *
-* Archive Page
+* Post Listing / Archive Page
 *
 * * * * * * * * * * * * * * * * * * * */
 .work {
@@ -382,11 +382,16 @@ td {
   }
 }
 
+/* Search/Archive Result Title stylse */
+.result-title {
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+}
+
 /* Search styles */
 .search {
   display: flex;
   position: relative;
-  margin-top: 3rem;
 }
 
 .search-icon {
@@ -426,13 +431,6 @@ td {
 .search-bar:focus {
   outline-width: 0;
 }
-
-/*
-.search-bar:focus + .work {
-  //****************************************** focus on search bar should increase margin on work list
-  margin-top: 3rem;
-}
-*/
 
 .search-bar:focus + .search-border,
 .search:focus .search-border {

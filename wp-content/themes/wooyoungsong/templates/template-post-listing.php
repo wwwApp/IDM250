@@ -13,8 +13,9 @@ get_header(); ?>
 
 <main class="main">
 
-        <div class="search" tabindex="0">
-            <svg class="search-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        <!-- <div class="search" tabindex="0"> -->
+        <?php get_template_part('templates/template-main-search-form'); ?>
+            <!-- <svg class="search-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 250.313 250.313" style="enable-background:new 0 0 250.313 250.313;" xml:space="preserve">
                 <g id="Search">
                     <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M244.186,214.604l-54.379-54.378c-0.289-0.289-0.628-0.491-0.93-0.76
@@ -26,28 +27,25 @@ get_header(); ?>
                 </g>
             </svg>
             <input class="search-bar" type="text" placeholder="search">
-            <div class="search-border"></div>
-        </div>
+            <div class="search-border"></div> -->
+        <!-- </div> -->
 
+        <!-- Project List -->
         <div class="work search-result">
-            <ul class="work__list">
-                <?php if ($posts->have_posts()) : ?>
-                    <?php while ($posts->have_posts()) : $posts->the_post(); ?>
-
-                        <li class="work__item">
-                            <a class="work__item__link" href="<?php the_permalink(); ?>">
-                                <?php the_title()?> 
-                            </a>
-                        </li>
-
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
-                    <?php else : ?>
-                        <p>
-                            <?php echo 'Sorry, no posts matched your criteria.'; ?>
-                        </p>
-                <?php endif; ?>
-            </ul>
+            <?php if ($posts->have_posts()) : ?>
+                <ul class="work__list">
+                <?php while ($posts->have_posts()) : $posts->the_post(); ?>
+                    <li class="work__item">
+                        <a class="work__item__link" href="<?php the_permalink(); ?>">
+                            <?php the_title()?> 
+                        </a>
+                    </li>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+                </ul>
+            <?php else : ?>
+                <h4 style="text-align: center">Sorry, No Post Found</h4>
+            <?php endif; ?>
         </div>
     </main>
 

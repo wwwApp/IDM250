@@ -30,7 +30,7 @@ get_header(); ?>
                 <?php wp_reset_query(); //resetting the page query?>
             <?php else: ?>
                 <div class="general">
-                    <h2>Sorry, No Post Found</h2>
+                    <h4 style="text-align: center">Sorry, No Post Found</h4>
                 </div>
             <?php endif; ?>
         </div>

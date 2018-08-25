@@ -12,8 +12,16 @@ jQuery(function($) {
         jQuery(".work").css("display","none");
     });
 
+    jQuery(".search-bar").on("focus", function(){
+        jQuery(".result-title").css("display","none");
+    });
+
     jQuery(".search-bar").on("focusout", function(){
         jQuery(".work").css("display","block");
+    });
+
+    jQuery(".search-bar").on("focusout", function(){
+        jQuery(".result-title").css("display","block");
     });
 
     // vTciker settting that does rolling texts

@@ -22,18 +22,18 @@ get_header(); ?>
             <div class="loop__bracket-right">]</div>
         </div>
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
-            <div class="work-detail__desc">
+        <div class="work-detail__desc">
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
                 <?php the_content(); 
                 endwhile; else: ?>
-                <p>Sorry, no posts matched your criteria.</p>
+                    <h4 style="text-align: center">Sorry, No Post Found</h4>
 
                 <!-- 
                 <div class="work-detail__image">
                 </div>
                 -->
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
     </div>
 </main>
 
