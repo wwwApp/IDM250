@@ -90,3 +90,46 @@ function archive_title( $title ) {
 }
  
 add_filter( 'get_the_archive_title', 'archive_title' );
+
+
+/**
+ * Add custom image size
+ */
+add_image_size('web-size', 1024, 576);
+add_image_size('mobile-size', 278, 521);
+
+// Register image sizes for use in Add Media modal
+add_filter( 'image_size_names_choose', 'wpshout_custom_sizes' );
+function wpshout_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'full-width' => __( 'Full Width' ),
+    ) );
+}
+
+
+/**
+ * Add custom logo & URL for wp login 
+ */
+function my_login_logo() { ?>
+    <style type="text/css">
+        body.login {
+            background-color:  #ecd2c9;
+        }
+        
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_template_directory_uri() ?>/dist/imgs/site-login-logo.png);
+            height:200px;
+            width:200px;
+            background-size: 200px 200px;
+            background-repeat: no-repeat;
+        	padding-bottom: 0px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );

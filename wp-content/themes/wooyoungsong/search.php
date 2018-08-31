@@ -29,7 +29,7 @@ get_header(); ?>
             <?php wp_reset_postdata(); ?>
             </ul>
         <?php else : ?>
-            <h4 style="text-align: center">Sorry, No Post Found</h4>
+            <p style="text-align: center; font-size: 2rem;">Sorry, No Post Found</p>
         <?php endif; ?>
     </div>
 </main>
