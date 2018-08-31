@@ -102,7 +102,8 @@ add_image_size('mobile-size', 278, 521);
 add_filter( 'image_size_names_choose', 'wpshout_custom_sizes' );
 function wpshout_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'full-width' => __( 'Full Width' ),
+        'web-size' => __( 'Web Size' ),
+        'mobile-size' => __( 'Mobile Size' ),
     ) );
 }
 
